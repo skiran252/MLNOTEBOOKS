@@ -1,0 +1,4 @@
+sudo rm -rf ~/.gitconfig
+sudo rm -rf .git/config.lock
+git config --global user.email "skiran252@gmail.com"
+git config --global user.name "skiran252"

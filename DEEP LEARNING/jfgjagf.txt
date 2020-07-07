@@ -1,0 +1,6 @@
+sudo chown root vsftpd.conf
+mkdir /home/crio-user/ftp_server /home/crio-user/ftp_client
+sudo mkdir /usr/share/empty
+sudo rm /home/crio-user/ftp_server/*
+sudo rm /home/crio-user/ftp_client/*
+dd if=/dev/urandom of=/home/crio-user/ftp_server/FileToTransfer bs=1048576 count=1000

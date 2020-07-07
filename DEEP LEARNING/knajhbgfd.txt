@@ -1,0 +1,658 @@
+#include <stdio.h>
+int high(int *i1, int *i2, int *i3, int *i4)
+{
+    int arr[] = {*i1, *i2, *i3, *i4};
+    int m = 0, n = 0;
+    for(int i = 0;i<4;i++)
+    {
+        if(arr[i]>=m)
+        {
+            m = arr[i];
+            n = i;
+        }
+    }
+    if(n==0)
+        *i1 = -1;
+    if(n==1)
+        *i2 = -1;
+    if(n==2)
+        *i3 = -1;
+    if(n==3)
+        *i4 = -1;
+    return  m;
+}
+int main()
+{
+    int t, last = 0;
+    scanf("%d",&t);
+    while(t--)
+    {
+        int a, max = 0, p1 = -400, index, i1, i2, i3, i4, sum, c;
+        scanf("%d",&a);
+        int arr[16]={0};
+        for(int i = 0;i<a;i++)
+        {
+            char b;
+            int c;
+            scanf(" %c",&b);
+            scanf("%d",&c);
+            if(b=='A')
+            {
+                if(c==12)
+                    arr[0]++;
+                if(c==3)
+                    arr[1]++;
+                if(c==6)
+                    arr[2]++;
+                if(c==9)
+                    arr[3]++;
+            }
+            if(b=='B')
+            {
+                if(c==12)
+                    arr[4]++;
+                if(c==3)
+                    arr[5]++;
+                if(c==6)
+                    arr[6]++;
+                if(c==9)
+                    arr[7]++;
+            }
+            if(b=='C')
+            {
+                if(c==12)
+                    arr[8]++;
+                if(c==3)
+                    arr[9]++;
+                if(c==6)
+                    arr[10]++;
+                if(c==9)
+                    arr[11]++;
+            }
+            if(b=='D')
+            {
+                if(c==12)
+                    arr[12]++;
+                if(c==3)
+                    arr[13]++;
+                if(c==6)
+                    arr[14]++;
+                if(c==9)
+                    arr[15]++;
+            }
+        }
+        sum = 0;
+        c = 0;
+        i1 = arr[0], i2 = arr[5], i3 = arr[10], i4 = arr[15];
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*100;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*75;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*50;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*25;
+        if(max<=0)
+            c++;
+        sum = sum - c*100;
+        if(sum>p1)
+            p1 = sum;
+            
+        sum = 0;
+        c = 0;
+        i1 = arr[0], i2 = arr[5], i3 = arr[11], i4 = arr[14];
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*100;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*75;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*50;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*25;
+        if(max<=0)
+            c++;
+        sum = sum - c*100;
+        if(sum>p1)
+            p1 = sum;
+            
+            
+        sum = 0;
+        c = 0;
+        i1 = arr[0], i2 = arr[6], i3 = arr[9], i4 = arr[15];
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*100;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*75;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*50;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*25;
+        if(max<=0)
+            c++;
+        sum = sum - c*100;
+        if(sum>p1)
+            p1 = sum;
+        
+        
+        sum = 0;
+        c = 0;
+        i1 = arr[0], i2 = arr[6], i3 = arr[11], i4 = arr[13];
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*100;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*75;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*50;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*25;
+        if(max<=0)
+            c++;
+        sum = sum - c*100;
+        if(sum>p1)
+            p1 = sum;
+            
+        sum = 0;
+        c = 0;
+        i1 = arr[0], i2 = arr[7], i3 = arr[9], i4 = arr[14];
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*100;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*75;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*50;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*25;
+        if(max<=0)
+            c++;
+        sum = sum - c*100;
+        if(sum>p1)
+            p1 = sum;
+            
+            
+        sum = 0;
+        c = 0;
+        i1 = arr[0], i2 = arr[7], i3 = arr[10], i4 = arr[13];
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*100;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*75;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*50;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*25;
+        if(max<=0)
+            c++;
+        sum = sum - c*100;
+        if(sum>p1)
+            p1 = sum;
+        
+        
+        sum = 0;
+        c = 0;
+        i1 = arr[1], i2 = arr[4], i3 = arr[10], i4 = arr[15];
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*100;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*75;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*50;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*25;
+        if(max<=0)
+            c++;
+        sum = sum - c*100;
+        if(sum>p1)
+            p1 = sum;
+            
+        sum = 0;
+        c = 0;
+        i1 = arr[1], i2 = arr[4], i3 = arr[11], i4 = arr[14];
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*100;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*75;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*50;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*25;
+        if(max<=0)
+            c++;
+        sum = sum - c*100;
+        if(sum>p1)
+            p1 = sum;
+            
+            
+        sum = 0;
+        c = 0;
+        i1 = arr[1], i2 = arr[6], i3 = arr[8], i4 = arr[15];
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*100;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*75;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*50;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*25;
+        if(max<=0)
+            c++;
+        sum = sum - c*100;
+        if(sum>p1)
+            p1 = sum;
+        
+        
+        sum = 0;
+        c = 0;
+        i1 = arr[1], i2 = arr[6], i3 = arr[11], i4 = arr[12];
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*100;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*75;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*50;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*25;
+        if(max<=0)
+            c++;
+        sum = sum - c*100;
+        if(sum>p1)
+            p1 = sum;
+            
+        sum = 0;
+        c = 0;
+        i1 = arr[1], i2 = arr[7], i3 = arr[8], i4 = arr[14];
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*100;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*75;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*50;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*25;
+        if(max<=0)
+            c++;
+        sum = sum - c*100;
+        if(sum>p1)
+            p1 = sum;
+            
+            
+        sum = 0;
+        c = 0;
+        i1 = arr[1], i2 = arr[7], i3 = arr[10], i4 = arr[12];
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*100;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*75;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*50;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*25;
+        if(max<=0)
+            c++;
+        sum = sum - c*100;
+        if(sum>p1)
+            p1 = sum;
+        
+        
+        sum = 0;
+        c = 0;
+        i1 = arr[2], i2 = arr[4], i3 = arr[9], i4 = arr[15];
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*100;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*75;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*50;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*25;
+        if(max<=0)
+            c++;
+        sum = sum - c*100;
+        if(sum>p1)
+            p1 = sum;
+            
+        sum = 0;
+        c = 0;
+        i1 = arr[2], i2 = arr[4], i3 = arr[11], i4 = arr[13];
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*100;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*75;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*50;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*25;
+        if(max<=0)
+            c++;
+        sum = sum - c*100;
+        if(sum>p1)
+            p1 = sum;
+            
+            
+        sum = 0;
+        c = 0;
+        i1 = arr[2], i2 = arr[5], i3 = arr[8], i4 = arr[15];
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*100;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*75;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*50;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*25;
+        if(max<=0)
+            c++;
+        sum = sum - c*100;
+        if(sum>p1)
+            p1 = sum;
+        
+        
+        sum = 0;
+        c = 0;
+        i1 = arr[2], i2 = arr[5], i3 = arr[11], i4 = arr[12];
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*100;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*75;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*50;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*25;
+        if(max<=0)
+            c++;
+        sum = sum - c*100;
+        if(sum>p1)
+            p1 = sum;
+            
+        sum = 0;
+        c = 0;
+        i1 = arr[2], i2 = arr[7], i3 = arr[8], i4 = arr[13];
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*100;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*75;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*50;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*25;
+        if(max<=0)
+            c++;
+        sum = sum - c*100;
+        if(sum>p1)
+            p1 = sum;
+            
+            
+        sum = 0;
+        c = 0;
+        i1 = arr[2], i2 = arr[7], i3 = arr[9], i4 = arr[12];
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*100;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*75;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*50;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*25;
+        if(max<=0)
+            c++;
+        sum = sum - c*100;
+        if(sum>p1)
+            p1 = sum;
+        
+        
+        sum = 0;
+        c = 0;
+        i1 = arr[3], i2 = arr[4], i3 = arr[9], i4 = arr[14];
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*100;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*75;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*50;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*25;
+        if(max<=0)
+            c++;
+        sum = sum - c*100;
+        if(sum>p1)
+            p1 = sum;
+            
+        sum = 0;
+        c = 0;
+        i1 = arr[3], i2 = arr[4], i3 = arr[10], i4 = arr[13];
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*100;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*75;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*50;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*25;
+        if(max<=0)
+            c++;
+        sum = sum - c*100;
+        if(sum>p1)
+            p1 = sum;
+            
+            
+        sum = 0;
+        c = 0;
+        i1 = arr[3], i2 = arr[5], i3 = arr[8], i4 = arr[14];
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*100;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*75;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*50;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*25;
+        if(max<=0)
+            c++;
+        sum = sum - c*100;
+        if(sum>p1)
+            p1 = sum;
+        
+        
+        sum = 0;
+        c = 0;
+        i1 = arr[3], i2 = arr[5], i3 = arr[10], i4 = arr[12];
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*100;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*75;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*50;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*25;
+        if(max<=0)
+            c++;
+        sum = sum - c*100;
+        if(sum>p1)
+            p1 = sum;
+            
+        sum = 0;
+        c = 0;
+        i1 = arr[3], i2 = arr[6], i3 = arr[8], i4 = arr[13];
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*100;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*75;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*50;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*25;
+        if(max<=0)
+            c++;
+        sum = sum - c*100;
+        if(sum>p1)
+            p1 = sum;
+            
+            
+        sum = 0;
+        c = 0;
+        i1 = arr[3], i2 = arr[6], i3 = arr[9], i4 = arr[12];
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*100;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*75;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*50;
+        if(max<=0)
+            c++;
+        max = high(&i1,&i2,&i3,&i4);
+        sum+=max*25;
+        if(max<=0)
+            c++;
+        sum = sum - c*100;
+        if(sum>p1)
+            p1 = sum;
+        
+        
+        
+        printf("%d\n",p1);
+        last+=p1;
+    }
+    printf("%d\n",last);
+    return 0;
+}
